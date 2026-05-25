@@ -1,0 +1,67 @@
+name: validate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  check-structure:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check agent directory structure
+        run: |
+          for dir in 0*/; do
+            dir="${dir%/}"
+            echo "Checking $dir..."
+            for file in README.md prompt.md example-output.md; do
+              if [ ! -f "$dir/$file" ]; then
+                echo "❌ Missing $file in $dir"
+                exit 1
+              fi
+            done
+            echo "  ✅ All files present"
+          done
+          echo "✅ All agent directories valid"
+
+      - name: Check Python syntax
+        run: |
+          for f in */*/agent.py; do
+            echo "Checking $f..."
+            python3 -c "
+import ast
+with open('$f') as fh:
+    ast.parse(fh.read())
+print('  ✅ Syntax OK')
+" || exit 1
+          done
+          echo "✅ All Python files valid"
+
+      - name: Check env.example structure
+        run: |
+          if [ ! -f .env.example ]; then
+            echo "❌ Missing .env.example"
+            exit 1
+          fi
+          echo "✅ .env.example present"
+
+      - name: Check skills
+        run: |
+          for skill in skills/*/; do
+            if [ ! -f "${skill}SKILL.md" ]; then
+              echo "❌ Missing SKILL.md in $skill"
+              exit 1
+            fi
+          done
+          echo "✅ All skills valid"
+
+      - name: Check no secrets leaked
+        run: |
+          if grep -rI "api_key_here\|your_.*_key" --include="*.py" --include="*.md" . 2>/dev/null | grep -v ".env.example" | grep -v "node_modules" | head -5; then
+            echo "⚠️ Found placeholder keys outside .env.example"
+          else
+            echo "✅ No placeholder keys in source files"
+          fi
