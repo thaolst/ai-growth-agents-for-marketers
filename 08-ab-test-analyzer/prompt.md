@@ -33,11 +33,11 @@ Variant (B):
 - [existing user — Control X% vs Variant Y%]
 Từ data trên, cho mình biết:
 
-1. Winner là A hay B, hay chưa có winner — giải thích ngắn gọn tại sao
+1. Winner là A hay B, hay chưa có winner — giải thích ngắn gọn tại sao, kèm effect size (relative lift) và confidence level cụ thể (nếu có thể tính p-value hoặc confidence interval thì show ra)
 2. Độ tin cậy của kết quả này — có nên ra quyết định dựa vào nó không
 3. Nếu chưa đủ tin cậy — cần thêm bao nhiêu sample hoặc bao nhiêu ngày
 4. Insight đáng chú ý từ segment breakdown nếu có
-5. Đề xuất hành động cụ thể: rollout, tiếp tục test, hay dừng
+5. Đề xuất hành động cụ thể: rollout, tiếp tục test, hay dừng — kèm lý do tại sao
 
 # English
 
@@ -72,4 +72,10 @@ Variant (B):
 **Segment breakdown (if any):**
 - [e.g. new users — Control X% vs Variant Y%]
 
-Tell me: winner (A, B, or none yet) and why, confidence level and whether to act on this, how much more sample or time if not confident yet, any notable segment patterns, and recommended action: rollout, keep testing, or stop.
+Tell me:
+
+1. Winner (A, B, or none yet) with effect size (relative lift) and confidence level — include p-value or confidence interval if you can estimate it
+2. Confidence level and whether to act on this
+3. How much more sample or time if not confident yet
+4. Any notable segment patterns
+5. Recommended action: rollout, keep testing, or stop — with clear rationale

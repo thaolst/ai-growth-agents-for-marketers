@@ -20,6 +20,12 @@ Mình cần lên plan để đạt MEU target tháng này.
 **Segment user đang có:**
 - [mô tả ngắn các nhóm user chính — ví dụ: new user chưa transaction, dormant user có balance, active user tần suất thấp]
 
+**Campaign history gần đây (nếu có):**
+- [mechanic nào hiệu quả, segment nào response tốt, bài học gì]
+
+**Competitor động thái (nếu biết):**
+- [đối thủ đang chạy gì, có ảnh hưởng đến plan này không]
+
 **Constraint:**
 - [những gì không được làm — ví dụ: không discount quá X%, không đụng segment Y vì đang có campaign khác]
 Từ thông tin trên, hãy:

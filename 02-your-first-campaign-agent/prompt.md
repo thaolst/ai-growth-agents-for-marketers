@@ -14,8 +14,15 @@ Brief phải cụ thể và đo lường được, thực tế với budget và 
 - Budget: [điền vào]
 - Loại mechanic: [voucher / cashback / game / bundle / khác]
 - Timeline: [điền vào]
+- Campaign history (nếu có): [điền pattern từ campaign trước đã hiệu quả hoặc không, để trống nếu không có]
+- Competitor động thái gần đây (nếu biết): [điền vào nếu có]
 
 Viết brief theo cấu trúc: Tổng quan campaign, Target segment, Thiết kế mechanic, Timeline và milestones, Phân bổ budget, Metrics, Rủi ro và xử lý, Checklist trước launch.
+
+**Quan trọng:**
+- Nếu có campaign history, phân tích pattern từ campaign trước và áp dụng vào brief này
+- Nếu có competitor info, phân tích ngắn cách brief này khác biệt hoặc chống lại competitor
+- Giải thích lý do từng quyết định, không chỉ nêu "làm gì" mà còn "tại sao"
 
 # English
 
@@ -33,5 +40,12 @@ The brief must be specific and measurable, realistic given the budget and timeli
 - Budget: [fill in]
 - Mechanic type: [voucher / cashback / game / bundle / other]
 - Timeline: [fill in]
+- Campaign history (if any): [what worked and didn't from previous campaigns, leave blank if none]
+- Competitor activity (if known): [what competitors are doing that could affect this campaign]
 
 Write the brief covering: Campaign overview, Target segment, Mechanic design, Timeline and milestones, Budget breakdown, Metrics, Risks and mitigations, Pre-launch checklist.
+
+**Important:**
+- If campaign history provided, analyze patterns and apply them
+- If competitor info provided, explain how this brief differentiates
+- Explain the "why" behind each decision, not just the "what"

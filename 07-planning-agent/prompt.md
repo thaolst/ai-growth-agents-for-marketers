@@ -25,12 +25,13 @@ Bạn là growth strategist. Mình cần lên plan tổng thể cho [tháng / qu
 - Deadline cứng nào cần biết: [ví dụ: campaign phải live trước ngày X]
 Từ thông tin trên, lên plan với:
 
-1. Phân tích tình huống ngắn gọn — gap là bao nhiêu, đến từ đâu
+1. Phân tích tình huống ngắn gọn — gap là bao nhiêu, đến từ đâu, competitor đang làm gì và cách plan này khác biệt
 2. Strategy tổng thể — hướng tiếp cận chính là gì và tại sao
-3. Campaign breakdown — đề xuất bao nhiêu campaign, loại gì, theo thứ tự ưu tiên
+3. Campaign breakdown — đề xuất bao nhiêu campaign, loại gì, theo thứ tự ưu tiên, kèm expected impact cho mỗi campaign
 4. Budget allocation — phân bổ ngân sách cho từng campaign và tại sao
 5. Timeline — cái nào chạy trước, cái nào chạy song song, cái nào chạy sau
 6. Risk chính và cách xử lý nếu xảy ra
+7. Contingency plan — nếu sau 2 tuần gap >10%, điều chỉnh thế nào (chuyển budget, pivot mechanic, activate campaign dự phòng)
 
 # English
 
