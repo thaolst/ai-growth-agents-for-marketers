@@ -61,6 +61,29 @@ Mình dùng AI agent trong công việc growth marketing hàng ngày — để v
 | [Agents in Production](./10-agents-in-production/) | Deploy và chạy agent thật, không chỉ demo |
 | [Case Studies](./case-studies/) | Kết quả thực tế từ campaign đã chạy, số liệu ẩn danh |
 
+### Agent Skills (dùng với Claude Code, Cursor, Codex)
+
+```bash
+# Cài tất cả skills
+npx skills add thaolst/ai-growth-agents-for-marketers
+
+# Hoặc cài skill cụ thể
+npx skills add thaolst/ai-growth-agents-for-marketers/skills/campaign-brief
+```
+
+| Skill | Agent | Làm gì |
+|-|-|-|
+| `campaign-brief` | [02](./02-your-first-campaign-agent/) | Viết campaign brief hoàn chỉnh |
+| `campaign-synthesis` | [03](./03-tool-use-no-code/) | Tổng hợp nhiều file campaign |
+| `automation-scripter` | [04](./04-tool-use-python/) | Tự động code Python cho marketer |
+| `multi-agent-research` | [05](./05-multi-agent-workflow/) | Research → Planning pipeline |
+| `rag-knowledge-base` | [06](./06-agentic-rag/) | Hỏi đáp từ kho tài liệu campaign |
+| `campaign-planning` | [07](./07-planning-agent/) | Lên plan campaign từ target |
+| `ab-test-analyzer` | [08](./08-ab-test-analyzer/) | Phân tích A/B test |
+| `meu-planning` | [09](./09-meu-planning-agent/) | Làm ngược từ MEU target |
+| `agent-pre-deploy-review` | [10](./10-agents-in-production/) | Review agent trước khi deploy |
+| `ai-agent-consultant` | [01](./01-what-is-ai-agent/) | Tư vấn chọn agent phù hợp |
+
 ### Cấu trúc mỗi agent
 
 ```
