@@ -7,6 +7,7 @@
   <img src="https://img.shields.io/badge/language-VI%20%2B%20EN-blue?style=flat-square" alt="language" />
   <img src="https://img.shields.io/badge/free-forever-brightgreen?style=flat-square" alt="free" />
   <img src="https://img.shields.io/badge/providers-Anthropic%20%7C%20OpenAI-8A2BE2?style=flat-square" alt="providers" />
+  <a href="https://codespaces.new/thaolst/ai-growth-agents-for-marketers"><img src="https://img.shields.io/badge/Open%20in-Codespaces-181717?style=flat-square&logo=github" alt="open in codespaces" /></a>
 </p>
 
 
@@ -89,6 +90,19 @@ Mỗi agent Python có `requirements.txt` riêng nếu bạn chỉ muốn cài a
 ```bash
 cd 08-ab-test-analyzer
 pip install -r requirements.txt
+```
+
+**One-click setup với Codespaces:**
+[![Open in Codespaces](https://img.shields.io/badge/Open%20in-Codespaces-181717?style=flat-square&logo=github)](https://codespaces.new/thaolst/ai-growth-agents-for-marketers)
+Mở repo trong GitHub Codespaces — môi trường Python đã cấu hình sẵn, chỉ cần thêm API key.
+
+**Makefile helper:**
+```bash
+make setup        # Cài dependencies + copy .env.example
+make validate     # Kiểm tra toàn bộ cấu trúc repo
+make run AGENT=08-ab-test-analyzer  # Chạy agent cụ thể
+make list         # Xem danh sách agent
+make clean        # Dọn __pycache__ và file tạm
 ```
 
 **Chọn provider:** Mặc định dùng Anthropic Claude. Set `AI_PROVIDER=openai` trong `.env` để dùng OpenAI GPT.
