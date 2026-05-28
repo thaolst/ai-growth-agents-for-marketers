@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Growth Agents for Marketers — Real agents from real campaigns</title>
+  <meta name="description" content="AI agents for growth marketing built from real fintech campaigns. Prompts + Python. Campaign brief, A/B test analysis, MEU planning, and more.">
+  <meta name="keywords" content="AI agents, growth marketing, marketing automation, AI prompts, fintech marketing, campaign brief, A/B test analysis, Southeast Asia marketing">
+  <meta property="og:title" content="AI Growth Agents for Marketers">
+  <meta property="og:description" content="Real AI agents built from real fintech campaigns. Not templates. Not theory.">
+  <meta property="og:image" content="https://raw.githubusercontent.com/thaolst/ai-growth-agents-for-marketers/main/images/banner.svg">
+  <meta property="og:url" content="https://thaolst.github.io/ai-growth-agents-for-marketers">
+  <meta name="twitter:card" content="summary_large_image">
+  <style>
+    :root {
+      --bg: #0f172a;
+      --surface: #1e293b;
+      --surface-hover: #334155;
+      --text: #f1f5f9;
+      --text-secondary: #94a3b8;
+      --accent: #a78bfa;
+      --accent2: #60a5fa;
+      --green: #34d399;
+      --yellow: #facc15;
+      --border: #334155;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* Hero */
+    .hero {
+      text-align: center;
+      padding: 5rem 1.5rem 3rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 1rem;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      color: var(--text-secondary);
+      margin-bottom: 2rem;
+    }
+    .hero .tagline {
+      font-size: 0.95rem;
+      color: var(--yellow);
+      font-style: italic;
+      margin-bottom: 2rem;
+    }
+    .hero .badge-group {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-bottom: 2rem;
+    }
+    .hero .badge-group img { height: 20px; }
+    .cta-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.85rem 2rem;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: all 0.2s;
+      border: none;
+      cursor: pointer;
+    }
+    .btn:hover { text-decoration: none; transform: translateY(-1px); }
+    .btn-primary { background: var(--accent); color: #0f172a; }
+    .btn-primary:hover { background: #c4b5fd; }
+    .btn-secondary { background: var(--surface); color: var(--text); border: 1px solid var(--border); }
+    .btn-secondary:hover { background: var(--surface-hover); }
+
+    /* Results bar */
+    .results {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1.5rem;
+      max-width: 900px;
+      margin: 3rem auto;
+      padding: 0 1.5rem;
+    }
+    .result-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      text-align: center;
+    }
+    .result-card .before {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      text-decoration: line-through;
+    }
+    .result-card .after {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--green);
+    }
+    .result-card .label {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      margin-top: 0.5rem;
+    }
+
+    /* Agents grid */
+    .section {
+      max-width: 1100px;
+      margin: 4rem auto;
+      padding: 0 1.5rem;
+    }
+    .section h2 {
+      font-size: 1.75rem;
+      margin-bottom: 0.5rem;
+    }
+    .section .subtitle {
+      color: var(--text-secondary);
+      margin-bottom: 2rem;
+    }
+    .agents-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1rem;
+    }
+    .agent-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      transition: border-color 0.2s;
+    }
+    .agent-card:hover { border-color: var(--accent); }
+    .agent-card .emoji { font-size: 1.5rem; }
+    .agent-card h3 {
+      margin: 0.5rem 0;
+      font-size: 1.1rem;
+    }
+    .agent-card p {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+    }
+    .agent-card .meta {
+      display: flex;
+      gap: 0.5rem;
+      margin-top: 0.75rem;
+    }
+    .agent-card .meta span {
+      font-size: 0.8rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      background: var(--bg);
+      color: var(--text-secondary);
+    }
+    .agent-card .meta .python { background: #1e3a5f; color: #93c5fd; }
+    .agent-card .meta .nocode { background: #1a3a2e; color: #6ee7b7; }
+
+    /* CTA */
+    .cta-section {
+      text-align: center;
+      padding: 4rem 1.5rem;
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .cta-section h2 { margin-bottom: 1rem; }
+    .cta-section p { color: var(--text-secondary); margin-bottom: 2rem; }
+
+    /* Stats */
+    .stats {
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+      padding: 3rem 1.5rem;
+    }
+    .stat-item { text-align: center; }
+    .stat-item .number {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--accent);
+    }
+    .stat-item .label {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+    }
+
+    /* Community links */
+    .community-links {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .community-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      text-align: center;
+      transition: border-color 0.2s;
+    }
+    .community-card:hover { border-color: var(--accent); }
+    .community-card .emoji { font-size: 2rem; }
+    .community-card h4 { margin: 0.5rem 0; }
+    .community-card p { color: var(--text-secondary); font-size: 0.85rem; }
+
+    /* Features */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+    .feature { text-align: center; }
+    .feature .icon { font-size: 2rem; margin-bottom: 0.5rem; }
+    .feature h3 { font-size: 1.1rem; margin-bottom: 0.3rem; }
+    .feature p { color: var(--text-secondary); font-size: 0.9rem; }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1.5rem;
+      color: var(--text-secondary);
+      font-size: 0.85rem;
+    }
+    footer a { color: var(--text-secondary); }
+
+    @media (max-width: 640px) {
+      .hero h1 { font-size: 1.8rem; }
+      .hero { padding: 3rem 1rem 2rem; }
+      .agents-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="hero">
+  <h1>AI Growth Agents<br>for Marketers</h1>
+  <p>Real AI agents built from real fintech campaigns. Prompts + Python.</p>
+  <div class="tagline">Not templates. Not theory. Real agents, actually run, from live campaigns.</div>
+  <div class="badge-group">
+    <img src="https://img.shields.io/github/stars/thaolst/ai-growth-agents-for-marketers?style=flat-square&color=facc15&logo=github" alt="stars">
+    <img src="https://img.shields.io/github/license/thaolst/ai-growth-agents-for-marketers?color=60a5fa&style=flat-square" alt="license">
+    <img src="https://img.shields.io/badge/providers-Anthropic%20%7C%20OpenAI-8A2BE2?style=flat-square" alt="providers">
+    <img src="https://img.shields.io/badge/free-forever-brightgreen?style=flat-square" alt="free forever">
+  </div>
+  <div class="cta-buttons">
+    <a href="https://github.com/thaolst/ai-growth-agents-for-marketers" class="btn btn-primary">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+      View on GitHub
+    </a>
+    <a href="https://codespaces.new/thaolst/ai-growth-agents-for-marketers" class="btn btn-secondary">
+      Open in Codespaces
+    </a>
+  </div>
+</div>
+
+<div class="results">
+  <div class="result-card">
+    <div class="before">3 hours</div>
+    <div class="after">20 min</div>
+    <div class="label">Campaign brief</div>
+  </div>
+  <div class="result-card">
+    <div class="before">3 hours</div>
+    <div class="after">15 min</div>
+    <div class="label">A/B test analysis</div>
+  </div>
+  <div class="result-card">
+    <div class="before">4 hours</div>
+    <div class="after">Automated</div>
+    <div class="label">Weekly growth report</div>
+  </div>
+  <div class="result-card">
+    <div class="before">Gut feeling</div>
+    <div class="after">10 min</div>
+    <div class="label">Voucher mechanic recommendation</div>
+  </div>
+</div>
+
+<div class="section">
+  <h2>Why this repo?</h2>
+  <div class="subtitle">Built from 9+ months of real fintech campaigns in Southeast Asia</div>
+  <div class="features">
+    <div class="feature">
+      <div class="icon">🎯</div>
+      <h3>Use case specific</h3>
+      <p>Not generic "AI for marketing". Each agent solves one real problem: write a brief, analyze a test, plan a campaign.</p>
+    </div>
+    <div class="feature">
+      <div class="icon">🔌</div>
+      <h3>Dual provider</h3>
+      <p>Works with Anthropic Claude and OpenAI GPT. Set one env variable to switch.</p>
+    </div>
+    <div class="feature">
+      <div class="icon">📝</div>
+      <h3>Bilingual</h3>
+      <p>Full Vietnamese + English prompts and docs. Built for SEA marketers.</p>
+    </div>
+    <div class="feature">
+      <div class="icon">🆓</div>
+      <h3>Free forever</h3>
+      <p>MIT license. Clone, fork, use. No paywalls, no tiers, no signups.</p>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h2>All Agents</h2>
+  <div class="subtitle">Click any agent to see the full prompt and example output</div>
+  <div class="agents-grid">
+    <a href="https://github.com/thaolst/ai-growth-agents-for-marketers/tree/main/01-what-is-ai-agent" class="agent-card">
+      <div class="emoji">💡</div>
+      <h3>AI Agent Consultant</h3>
+      <p>Don't know what kind of agent you need? Answer a few questions and get a recommendation.</p>
+      <div class="meta"><span class="nocode">❌ No code</span></div>
+    </a>
+    <a href="https://github.com/thaolst/ai-growth-agents-for-marketers/tree/main/02-your-first-campaign-agent" class="agent-card">
+      <div class="emoji">📋</div>
+      <h3>Campaign Brief Agent</h3>
+      <p>5 inputs → complete campaign brief. Voucher design, user journey, budget, risks, checklist.</p>
+      <div class="meta"><span class="nocode">❌ No code</span></div>
+    </a>
+    <a href="https://github.com/thaolst/ai-growth-agents-for-marketers/tree/main/03-tool-use-no-code" class="agent-card">
+      <div class="emoji">🔍</div>
+      <h3>Campaign Synthesis</h3>
+      <p>Paste multiple campaign files. Get summaries, patterns, contradictions, and action items.</p>
+      <div class="meta"><span class="nocode">❌ No code</span></div>
+    </a>
+    <a href="https://github.com/thaolst/ai-growth-agents-for-marketers/tree/main/04-tool-use-python" class="agent-card">
+      <div class="emoji">⚙️</div>
+      <h3>Automation Scripter</h3>
+      <p>Describe a manual task. The agent writes a Python script to automate it — for non-coders.</p>
+      <div class="meta"><span class="python">🐍 Python</span></div>
+    </a>
+    <a href="https://github.com/thaolst/ai-growth-agents-for-marketers/tree/main/05-multi-agent-workflow" class="agent-card">
+      <div class="emoji">🔄</div>
+      <h3>Multi-Agent Pipeline</h3>
+      <p>Research Agent analyzes data → Strategy Agent creates a plan. Two agents, one workflow.</p>
+      <div class="meta"><span class="python">🐍 Python</span></div>
+    </a>
+    <a href="https://github.com/thaolst/ai-growth-agents-for-marketers/tree/main/06-agentic-rag" class="agent-card">
+      <div class="emoji">📚</div>
+      <h3>Agentic RAG</h3>
+      <p>Upload all past campaigns to a Claude Project. Ask questions. Get source-cited answers.</p>
+      <div class="meta"><span class="nocode">❌ No code</span></div>
+    </a>
+    <a href="https://github.com/thaolst/ai-growth-agents-for-marketers/tree/main/07-planning-agent" class="agent-card">
+      <div class="emoji">🎯</div>
+      <h3>Planning Agent</h3>
+      <p>Input a growth target. Get a full campaign plan: breakdown, budget, timeline, risks.</p>
+      <div class="meta"><span class="python">🐍 Python</span></div>
+    </a>
+    <a href="https://github.com/thaolst/ai-growth-agents-for-marketers/tree/main/08-ab-test-analyzer" class="agent-card">
+      <div class="emoji">📊</div>
+      <h3>A/B Test Analyzer</h3>
+      <p>Input test data. Get winner, confidence level, segment breakdown, and next action.</p>
+      <div class="meta"><span class="python">🐍 Python</span></div>
+    </a>
+    <a href="https://github.com/thaolst/ai-growth-agents-for-marketers/tree/main/09-meu-planning-agent" class="agent-card">
+      <div class="emoji">📈</div>
+      <h3>MEU Planning Agent</h3>
+      <p>Work backward from a Monthly Engaging Users target to specific campaign recommendations.</p>
+      <div class="meta"><span class="python">🐍 Python</span></div>
+    </a>
+    <a href="https://github.com/thaolst/ai-growth-agents-for-marketers/tree/main/10-agents-in-production" class="agent-card">
+      <div class="emoji">🚀</div>
+      <h3>Pre-deploy Review</h3>
+      <p>Built an agent? Get it reviewed before depending on it for real campaign work.</p>
+      <div class="meta"><span class="python">🐍 Python</span></div>
+    </a>
+  </div>
+</div>
+
+<div class="cta-section">
+  <h2>Get started in 1 minute</h2>
+  <p>No signup. No credit card. Just clone and use.</p>
+  <div class="cta-buttons">
+    <a href="https://github.com/thaolst/ai-growth-agents-for-marketers" class="btn btn-primary">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+      Clone on GitHub
+    </a>
+  </div>
+</div>
+
+<div class="section">
+  <h2>Community</h2>
+  <div class="subtitle">Join the conversation</div>
+  <div class="community-links">
+    <a href="https://github.com/thaolst/ai-growth-agents-for-marketers/discussions" class="community-card">
+      <div class="emoji">💬</div>
+      <h4>Discussions</h4>
+      <p>Ask questions, share how you're using the agents, request new features.</p>
+    </a>
+    <a href="https://github.com/thaolst/ai-growth-agents-for-marketers/issues" class="community-card">
+      <div class="emoji">🐛</div>
+      <h4>Issues</h4>
+      <p>Report bugs, suggest improvements, submit new agent ideas.</p>
+    </a>
+    <a href="https://github.com/thaolst/ai-growth-agents-for-marketers/blob/main/CONTRIBUTING.md" class="community-card">
+      <div class="emoji">📝</div>
+      <h4>Contributing</h4>
+      <p>Add prompts, improve agents, share your real campaign results.</p>
+    </a>
+    <a href="https://www.linkedin.com/in/thaolst/" class="community-card">
+      <div class="emoji">🔗</div>
+      <h4>Author on LinkedIn</h4>
+      <p>Connect with the author for growth marketing × AI discussions.</p>
+    </a>
+  </div>
+</div>
+
+<div class="stats">
+  <div class="stat-item">
+    <div class="number">10</div>
+    <div class="label">AI Agents</div>
+  </div>
+  <div class="stat-item">
+    <div class="number">10</div>
+    <div class="label">Agent Skills</div>
+  </div>
+  <div class="stat-item">
+    <div class="number">2</div>
+    <div class="label">Providers (Anthropic + OpenAI)</div>
+  </div>
+  <div class="stat-item">
+    <div class="number">VI + EN</div>
+    <div class="label">Languages</div>
+  </div>
+</div>
+
+<footer>
+  <p>Built with ❤️ from Vietnam by <a href="https://www.linkedin.com/in/thaolst/">Lê Song Tiên Thảo</a> · MIT License</p>
+  <p><a href="https://github.com/thaolst/ai-growth-agents-for-marketers">GitHub</a> · <a href="https://thaolst.substack.com/">Substack</a></p>
+</footer>
+
+</body>
+</html>

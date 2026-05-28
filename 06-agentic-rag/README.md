@@ -1,3 +1,5 @@
+> **No agent.py here** — RAG doesn't need a Python script. The "agent" is the Claude Project itself. Just upload files and ask questions. No code required. / RAG không cần Python. Agent là chính Claude Project — upload file và hỏi.
+
 # Agentic RAG
 
 RAG là Retrieval-Augmented Generation — agent tìm thông tin liên quan từ một tập tài liệu lớn trước khi trả lời.

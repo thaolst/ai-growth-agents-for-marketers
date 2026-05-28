@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 💬 Discussions — Q&A and community
+    url: https://github.com/thaolst/ai-growth-agents-for-marketers/discussions
+    about: Ask questions, share how you use the agents, request new features.
+  - name: 📖 Case Studies
+    url: https://github.com/thaolst/ai-growth-agents-for-marketers/tree/main/case-studies
+    about: Real results from real campaigns — check before asking or contributing.

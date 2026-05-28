@@ -12,7 +12,7 @@ setup:
 
 validate:
 	@echo "=== Checking agent directories ==="
-	@for dir in 0*/ 10*/; do \
+	@for dir in 0[1-9]*/ 10*/; do \
 		dir=$${dir%/}; \
 		echo -n "  $$dir ... "; \
 		missing=""; \

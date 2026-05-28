@@ -15,7 +15,7 @@ jobs:
       - name: Check agent directory structure
         run: |
           errors=0
-          for dir in 0*/ 10*/; do
+          for dir in 0[1-9]*/ 10*/; do
             dir="${dir%/}"
             echo "Checking $dir..."
             for file in README.md prompt.md example-output.md; do
