@@ -41,13 +41,10 @@ jobs:
         run: |
           errors=0
           while IFS= read -r -d '' f; do
-            echo "Checking $f..."
-            python3 -c "
-import ast
-with open('$f') as fh:
-    ast.parse(fh.read())
-print('  ✅ Syntax OK')
-" || { errors=$((errors+1)); }
+            printf "  %s ... " "$f"
+            python3 -m py_compile "$f" 2>/dev/null \
+              && echo "✅" \
+              || { echo "❌ Syntax error"; errors=$((errors+1)); }
           done < <(find . -path './.git' -prune -o -name 'agent.py' -print0)
           if [ $errors -gt 0 ]; then
             echo "❌ $errors file(s) have syntax errors"
