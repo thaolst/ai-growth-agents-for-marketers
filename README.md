@@ -19,7 +19,12 @@
 
 <p align="center">
   <a href="https://thaolst.github.io/ai-growth-agents-for-marketers"><strong>🌐 Website</strong></a> ·
-  <a href="https://github.com/thaolst/ai-growth-agents-for-marketers/discussions"><strong>💬 Discussions</strong></a>
+  <a href="https://github.com/thaolst/ai-growth-agents-for-marketers/discussions"><strong>💬 Discussions</strong></a> ·
+  <a href="./CONTRIBUTING.md"><strong>📝 Contribute</strong></a>
+</p>
+
+<p align="center">
+  <a href="https://star-history.com/#thaolst/ai-growth-agents-for-marketers&Date"><img src="https://api.star-history.com/svg?repos=thaolst/ai-growth-agents-for-marketers&type=Date" width="450" alt="Star History" /></a>
 </p>
 
 <!--

@@ -2,6 +2,17 @@
 
 Mình xây repo này từ công việc thực tế, không phải từ lý thuyết. Nếu bạn cũng đang dùng AI agent trong growth marketing và có thứ gì đó work — mình muốn nghe.
 
+## 💬 Bắt đầu từ Discussions
+
+Trước khi gửi issue hay PR, hãy ghé qua **Discussions**:
+
+- **💡 Ideas & Suggestions** — có ý tưởng agent mới? Đăng lên đây trước
+- **🙏 Q&A** — cần giúp dùng agent? Hỏi ở đây
+- **📢 Share & Showcase** — đã dùng agent cho campaign thật? Kể câu chuyện của bạn
+- **🗣️ General** — mọi thứ khác
+
+👉 [Tham gia Discussions](https://github.com/thaolst/ai-growth-agents-for-marketers/discussions)
+
 ## Cách contribute
 
 **Thêm prompt hoặc cải thiện prompt có sẵn**
