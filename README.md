@@ -20,7 +20,8 @@
 <p align="center">
   <a href="https://thaolst.github.io/ai-growth-agents-for-marketers"><strong>🌐 Website</strong></a> ·
   <a href="https://github.com/thaolst/ai-growth-agents-for-marketers/discussions"><strong>💬 Discussions</strong></a> ·
-  <a href="./CONTRIBUTING.md"><strong>📝 Contribute</strong></a>
+  <a href="./CONTRIBUTING.md"><strong>📝 Contribute</strong></a> ·
+  <a href="./CHANGELOG.md"><strong>📋 Changelog</strong></a>
 </p>
 
 <p align="center">
