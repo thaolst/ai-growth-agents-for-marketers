@@ -14,7 +14,7 @@ validate:
 	@echo "=== Checking agent directories ==="
 	@for dir in 0[1-9]*/ 10*/; do \
 		dir=$${dir%/}; \
-		echo -n "  $$dir ... "; \
+		printf "  %s ... " "$$dir"; \
 		missing=""; \
 		for file in README.md prompt.md example-output.md; do \
 			[ -f "$$dir/$$file" ] || missing="$$missing $$file"; \
@@ -28,10 +28,14 @@ validate:
 	@echo "✅ All agent directories complete"
 
 	@echo "=== Checking Python syntax ==="
-	@for f in */*/agent.py; do \
-		echo -n "  $$f ... "; \
-		python3 -c "import ast; ast.parse(open('$$f').read())" 2>/dev/null && echo "✅" || (echo "❌ Syntax error"; exit 1); \
-	done
+	@errors=0; \
+	for f in */agent.py; do \
+		if [ -f "$$f" ]; then \
+			printf "  %s ... " "$$f"; \
+			python3 -c "import ast; ast.parse(open('$$f').read())" 2>/dev/null && echo "✅" || (echo "❌ Syntax error"; errors=$$((errors+1))); \
+		fi; \
+	done; \
+	if [ $$errors -gt 0 ]; then exit 1; fi
 	@echo "✅ All Python files valid"
 
 	@echo "=== Checking .env.example ==="

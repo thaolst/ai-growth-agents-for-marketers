@@ -48,7 +48,7 @@ with open('$f') as fh:
     ast.parse(fh.read())
 print('  ✅ Syntax OK')
 " || { errors=$((errors+1)); }
-          done < <(find . -name 'agent.py' -print0)
+          done < <(find . -path './.git' -prune -o -name 'agent.py' -print0)
           if [ $errors -gt 0 ]; then
             echo "❌ $errors file(s) have syntax errors"
             exit 1
