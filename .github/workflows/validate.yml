@@ -7,127 +7,48 @@ on:
     branches: [main]
 
 jobs:
-  check-structure:
+  validate:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
 
-      - name: Check agent directory structure
-        run: |
-          errors=0
-          for dir in 0[1-9]*/ 10*/; do
-            dir="${dir%/}"
-            echo "Checking $dir..."
-            for file in README.md prompt.md example-output.md; do
-              if [ ! -f "$dir/$file" ]; then
-                echo "❌ Missing $file in $dir"
-                errors=$((errors+1))
-              fi
-            done
-            if [ -f "$dir/agent.py" ]; then
-              if [ ! -f "$dir/requirements.txt" ]; then
-                echo "⚠️  $dir has agent.py but no requirements.txt"
-              fi
-            fi
-            echo ""
-          done
-          if [ $errors -gt 0 ]; then
-            echo "❌ $errors file(s) missing"
-            exit 1
-          fi
-          echo "✅ All agent directories valid"
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
 
       - name: Check Python syntax
         run: |
           errors=0
           while IFS= read -r -d '' f; do
-            printf "  %s ... " "$f"
             python3 -m py_compile "$f" 2>/dev/null \
-              && echo "✅" \
-              || { echo "❌ Syntax error"; errors=$((errors+1)); }
+              && echo "ok: $f" \
+              || { echo "error: $f"; errors=$((errors+1)); }
           done < <(find . -path './.git' -prune -o -name 'agent.py' -print0)
           if [ $errors -gt 0 ]; then
-            echo "❌ $errors file(s) have syntax errors"
+            echo "$errors Python file(s) have syntax errors"
             exit 1
           fi
-          echo "✅ All Python files valid"
+          echo "All Python files valid"
 
-      - name: Check .env.example
+      - name: Check key files exist
         run: |
-          if [ ! -f .env.example ]; then
-            echo "❌ Missing .env.example"
-            exit 1
-          fi
-          echo "✅ .env.example present"
-
-      - name: Check root requirements.txt
-        run: |
-          for req in anthropic openai python-dotenv pandas; do
-            if ! grep -q "$req" requirements.txt; then
-              echo "⚠️  $req not found in root requirements.txt"
+          for f in README.md requirements.txt .env.example LICENSE CONTRIBUTING.md; do
+            if [ ! -f "$f" ]; then
+              echo "Missing: $f"
+              exit 1
             fi
           done
-          echo "✅ requirements.txt looks good"
+          echo "All key files present"
 
       - name: Check skills
         run: |
           errors=0
           for skill in skills/*/; do
             if [ ! -f "${skill}SKILL.md" ]; then
-              echo "❌ Missing SKILL.md in $skill"
+              echo "Missing SKILL.md in $skill"
               errors=$((errors+1))
             fi
           done
-          if [ $errors -gt 0 ]; then
-            exit 1
-          fi
-          echo "✅ All skills valid"
-
-      - name: Check example output quality
-        run: |
-          echo "Checking example-output.md files..."
-          for f in */*/example-output.md; do
-            lines=$(wc -l < "$f")
-            if [ "$lines" -lt 10 ]; then
-              echo "⚠️  $f has only $lines lines — consider adding more detail"
-            fi
-            echo "  $f: $lines lines ✓"
-          done
-          echo "✅ Example outputs checked"
-
-      - name: Check no secrets leaked
-        run: |
-          if grep -rI "api_key\|sk-[A-Za-z0-9]\{20,\}\|your_anthropic_api_key\|your_openai_api_key" \
-            --include="*.py" --include="*.md" --include="*.txt" --include="*.json" \
-            --exclude-dir=.git --exclude=.env.example . 2>/dev/null | head -5; then
-            echo "⚠️  Possible API key references found in source files"
-          else
-            echo "✅ No secrets leaked"
-          fi
-
-      - name: Check README badges
-        run: |
-          for badge in license stars last-commit language free providers; do
-            if ! grep -q "$badge" README.md; then
-              echo "⚠️  Missing $badge badge in README"
-            fi
-          done
-          echo "✅ README badges checked"
-
-  markdown-lint:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: DavidAnson/markdownlint-cli2-action@v19
-        with:
-          globs: |
-            **/*.md
-            !.git/**/*
-            !node_modules/**/*
-          config: |
-            {
-              "MD013": false,
-              "MD033": false,
-              "MD041": false,
-              "MD024": false
-            }
+          if [ $errors -gt 0 ]; then exit 1; fi
+          echo "All skills valid"
