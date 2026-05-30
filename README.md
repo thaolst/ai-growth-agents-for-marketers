@@ -40,12 +40,8 @@ npx skills add thaolst/ai-growth-agents-for-marketers
 
 Hoạt động với Claude Code, OpenAI Codex, Cursor, và mọi agent hỗ trợ Agent Skills spec.
 
----
-
 > Không phải template. Không phải lý thuyết. Agent thật, chạy được, từ campaign thực tế.
 > Not templates. Not theory. Real agents, actually run, from live campaigns.
-
----
 
 # Tiếng Việt
 
@@ -175,8 +171,6 @@ Mình build agent, prompt, và workflow cho công việc growth thực tế — 
 [LinkedIn](https://www.linkedin.com/in/thaolst/) · [GitHub](https://github.com/thaolst) · [Substack](https://thaolst.substack.com/) · [Website](https://thaolst.github.io/ai-growth-agents-for-marketers)
 
 ⭐ Star repo này nếu nó tiết kiệm cho bạn ít nhất 1 tiếng. ⭐
-
----
 
 # English
 
