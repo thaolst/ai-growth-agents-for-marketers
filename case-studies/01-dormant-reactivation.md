@@ -37,8 +37,6 @@ Agent tự động flag đúng vấn đề quan trọng nhất (D7 retention) tr
 
 Prompt tiết kiệm khoảng 2.5 tiếng so với viết brief thủ công, nhưng giá trị lớn nhất không phải ở thời gian mà ở việc không bỏ sót rủi ro.
 
----
-
 # English
 
 ## Context
