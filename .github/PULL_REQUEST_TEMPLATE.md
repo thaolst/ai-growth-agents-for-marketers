@@ -17,7 +17,7 @@ about: Gửi cải tiến prompt, agent mới, hoặc fix lỗi / Submit prompt 
 
 ## Kiểm tra / Checklist
 
-- [ ] Tôi đã test prompt/agent trong công việc thực tế / Tested in real work
+- [ ] Mình đã test prompt/agent trong công việc thực tế / Tested in real work
 - [ ] Số liệu đã được ẩn danh (nếu có) / Numbers anonymized (if any)
 - [ ] Output mẫu đã được cập nhật / Example output updated
 - [ ] File đúng format (README, prompt.md, example-output.md) / Files follow expected format
