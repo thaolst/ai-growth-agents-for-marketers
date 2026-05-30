@@ -26,8 +26,6 @@ Plan B agent de xuat (mo rong sang dormant 60-90 ngay) duoc kích hoat va bu dap
 
 Gia tri lon nhat khong phai o do chinh xac cua du bao MEU. Ma o viec co san Plan B ro rang truoc khi bat dau. Truoc day khi campaign underperform, mat them 1-2 ngay hop de quyet dinh lam gi tiep theo. Lan nay Plan B da san sang, thuc thi ngay.
 
----
-
 # English
 
 ## Context
