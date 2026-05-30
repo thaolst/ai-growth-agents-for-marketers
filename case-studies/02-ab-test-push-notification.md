@@ -26,8 +26,6 @@ Insight quan trọng nhất không phải từ overall result mà từ segment b
 
 Winner tổng có thể che giấu pattern quan trọng ở cấp segment. Prompt tự động phân tích breakdown này và đặt nó lên đầu thay vì để mình tự nhớ kiểm tra.
 
----
-
 # English
 
 ## Context
