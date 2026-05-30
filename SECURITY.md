@@ -17,8 +17,6 @@ Vui lòng mở Issue với label `security` hoặc email: tienthaotara@gmail.com
 
 Mình sẽ phản hồi trong vòng 48h.
 
----
-
 This repo contains AI agent prompts and code — not a production service, so security risk is low.
 However, if you find:
 
