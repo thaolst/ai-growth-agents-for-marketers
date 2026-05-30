@@ -19,36 +19,19 @@ jobs:
 
       - name: Check Python syntax
         run: |
-          errors=0
-          while IFS= read -r -d '' f; do
-            python3 -m py_compile "$f" 2>/dev/null \
-              && echo "ok: $f" \
-              || { echo "error: $f"; errors=$((errors+1)); }
-          done < <(find . -path './.git' -prune -o -name 'agent.py' -print0)
-          if [ $errors -gt 0 ]; then
-            echo "$errors Python file(s) have syntax errors"
-            exit 1
-          fi
+          find . -name 'agent.py' -not -path './.git/*' | while read f; do
+            python3 -m py_compile "$f" && echo "ok: $f" || { echo "syntax error: $f"; exit 1; }
+          done
           echo "All Python files valid"
 
       - name: Check key files exist
         run: |
           for f in README.md requirements.txt .env.example LICENSE CONTRIBUTING.md; do
-            if [ ! -f "$f" ]; then
-              echo "Missing: $f"
-              exit 1
-            fi
+            [ -f "$f" ] && echo "ok: $f" || { echo "missing: $f"; exit 1; }
           done
-          echo "All key files present"
 
-      - name: Check skills
+      - name: Check skills have SKILL.md
         run: |
-          errors=0
           for skill in skills/*/; do
-            if [ ! -f "${skill}SKILL.md" ]; then
-              echo "Missing SKILL.md in $skill"
-              errors=$((errors+1))
-            fi
+            [ -f "${skill}SKILL.md" ] && echo "ok: ${skill}SKILL.md" || { echo "missing: ${skill}SKILL.md"; exit 1; }
           done
-          if [ $errors -gt 0 ]; then exit 1; fi
-          echo "All skills valid"
