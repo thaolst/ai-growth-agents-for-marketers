@@ -23,8 +23,6 @@ Hoặc cài từng skill:
 npx skills add thaolst/ai-growth-agents-for-marketers --skill campaign-brief
 ```
 
----
-
 # English
 
 Skills for AI agents following the Agent Skills spec (agentskills.io).
