@@ -1,0 +1,50 @@
+{
+  "name": "ai-growth-agents-for-marketers",
+  "description": "AI prompts and workflows for growth marketers \u2014 built from real fintech campaigns in Southeast Asia",
+  "author": "thaolst",
+  "version": "1.0.0",
+  "license": "MIT",
+  "homepage": "https://github.com/thaolst/ai-growth-agents-for-marketers",
+  "skills": [
+    {
+      "name": "campaign-brief",
+      "path": "skills/campaign-brief",
+      "description": "Write complete campaign briefs from 5 inputs"
+    },
+    {
+      "name": "ab-test-analyzer",
+      "path": "skills/ab-test-analyzer",
+      "description": "Analyze A/B test results and recommend next actions"
+    },
+    {
+      "name": "meu-planning",
+      "path": "skills/meu-planning",
+      "description": "Build campaign plan backward from MEU target"
+    },
+    {
+      "name": "campaign-planning",
+      "path": "skills/campaign-planning",
+      "description": "Build monthly or quarterly campaign plan"
+    },
+    {
+      "name": "tool-use-no-code",
+      "path": "skills/tool-use-no-code",
+      "description": "Synthesize multiple campaign files to extract insights"
+    },
+    {
+      "name": "multi-agent-workflow",
+      "path": "skills/multi-agent-workflow",
+      "description": "Two-stage research then planning workflow"
+    },
+    {
+      "name": "agentic-rag",
+      "path": "skills/agentic-rag",
+      "description": "Query campaign history and past documents"
+    },
+    {
+      "name": "agents-in-production",
+      "path": "skills/agents-in-production",
+      "description": "Review prompts before deploying to real usage"
+    }
+  ]
+}
