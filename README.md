@@ -111,28 +111,71 @@ Môi trường Python + extensions sẵn, chỉ cần thêm API key.
 └── example-output.md  ← Output thật từ campaign thật
 ```
 
+### 🌟 Điều làm repo này khác biệt
+
+| Không giống ai | Vì sao độc đáo |
+|----------------|----------------|
+| **Python agents chạy thật** | Skills markdown + 7 Python agents executable — dual format |
+| **Fintech + SEA context** | Không lý thuyết SaaS Mỹ. Campaign thật ở Việt Nam, Indonesia, Philippines |
+| **Data connector** | growth-mcp MCP server → real metrics, không guesswork |
+| **Context system** | Điền `.agents/product-marketing-context.md` một lần → 15 skills dùng chung |
+| **Bilingual VI/EN** | Prompt và skills 100% song ngữ |
+
 ### Agent Skills (dùng với Claude Code, Cursor, Codex)
 
 ```bash
-# Cài tất cả (recommended)
+# Cài tất cả (15 skills)
 npx skills add thaolst/ai-growth-agents-for-marketers
 
-# Hoặc cài skill cụ thể
+# Cài skill cụ thể
 npx skills add thaolst/ai-growth-agents-for-marketers/skills/campaign-brief
 ```
 
-| Skill | Agent | Mô tả |
-|-------|-------|-------|
-| `ai-agent-consultant` | [01](./01-what-is-ai-agent/) | Tư vấn chọn agent phù hợp |
-| `campaign-brief` | [02](./02-your-first-campaign-agent/) | Viết campaign brief |
-| `campaign-synthesis` | [03](./03-tool-use-no-code/) | Tổng hợp campaign |
-| `automation-scripter` | [04](./04-tool-use-python/) | Tạo Python script |
-| `multi-agent-research` | [05](./05-multi-agent-workflow/) | Research→Plan pipeline |
-| `rag-knowledge-base` | [06](./06-agentic-rag/) | RAG knowledge base |
-| `campaign-planning` | [07](./07-planning-agent/) | Campaign planning |
-| `ab-test-analyzer` | [08](./08-ab-test-analyzer/) | A/B test analysis |
-| `meu-planning` | [09](./09-meu-planning-agent/) | MEU planning |
-| `agent-pre-deploy-review` | [10](./10-agents-in-production/) | Pre-deploy review |
+| Skill | Agent | Mô tả | Context? |
+|-------|-------|-------|----------|
+| `ai-agent-consultant` | [01](./01-what-is-ai-agent/) | Tư vấn chọn agent phù hợp | ✅ |
+| `campaign-brief` | [02](./02-your-first-campaign-agent/) | Viết campaign brief | ✅ |
+| `campaign-synthesis` | [03](./03-tool-use-no-code/) | Tổng hợp campaign | ✅ |
+| `automation-scripter` | [04](./04-tool-use-python/) | Tạo Python script | ✅ |
+| `multi-agent-research` | [05](./05-multi-agent-workflow/) | Research→Plan pipeline | ✅ |
+| `rag-knowledge-base` | [06](./06-agentic-rag/) | RAG knowledge base | ✅ |
+| `campaign-planning` | [07](./07-planning-agent/) | Campaign planning | ✅ |
+| `ab-test-analyzer` | [08](./08-ab-test-analyzer/) | A/B test analysis | ✅ |
+| `meu-planning` | [09](./09-meu-planning-agent/) | MEU planning | ✅ |
+| `agent-pre-deploy-review` | [10](./10-agents-in-production/) | Pre-deploy review | ✅ |
+| `voucher-mechanic-designer` | — | Thiết kế mechanic voucher | ✅ |
+| `fintech-campaign-designer` | — | Campaign design cho fintech | ✅ |
+| `retention-analyzer` | — | Phân tích retention | ✅ |
+| `churn-intervention` | — | Save offer + winback | ✅ |
+| `growth-mcp-connect` | — | **Data connector** → real data | 🟢 |
+
+> ✅ = Skill tự động đọc `.agents/product-marketing-context.md`
+> 🟢 = Skill kết nối growth-mcp để lấy real-time data
+
+### 💡 Hệ thống Context (mới)
+
+```bash
+.agents/
+├── product-marketing-context.md   ← Điền 1 lần → 15 skills tự động dùng
+└── growth-metrics-context.md      ← Tùy chọn: metric baseline thủ công
+```
+
+Cách này giống Corey Haines (31k⭐ marketing skills) nhưng fintech-focused + có Python agents.
+
+### 🔌 Data Connector: growth-mcp (mới)
+
+Kết nối growth-mcp để pull real metrics:
+
+```bash
+git clone https://github.com/thaolst/growth-mcp.git
+cd growth-mcp && pip install -e .
+```
+
+Khi growth-mcp chạy, các skill sẽ tự động:
+- Pull campaign performance trước khi viết brief
+- Pull real cohort data trước khi phân tích retention
+- Pull experiment data trước khi phân tích A/B test
+- So sánh recommendation với campaign history thật
 
 ### Chọn provider
 
@@ -196,19 +239,64 @@ I use AI agents daily for growth marketing work — writing briefs, analyzing A/
 
 ### What's inside
 
-| Agent | What it does | Code? |
-|-------|-------------|-------|
-| [💡 AI Agent Consultant](./01-what-is-ai-agent/) | Choose the right agent type | ❌ |
-| [📋 Campaign Brief Agent](./02-your-first-campaign-agent/) | 5 inputs → complete brief | ❌ |
-| [🔍 Campaign Synthesis](./03-tool-use-no-code/) | Synthesize multiple files | ❌ |
-| [⚙️ Automation Scripter](./04-tool-use-python/) | Auto-generate Python scripts | 🐍 |
-| [🔄 Multi-Agent Pipeline](./05-multi-agent-workflow/) | Research → Planning | 🐍 |
-| [📚 Agentic RAG](./06-agentic-rag/) | Q&A from campaign history | ❌ |
-| [🎯 Planning Agent](./07-planning-agent/) | Target → full campaign plan | 🐍 |
-| [📊 A/B Test Analyzer](./08-ab-test-analyzer/) | Analyze + recommend | 🐍 |
-| [📈 MEU Planning](./09-meu-planning-agent/) | MEU target → campaigns | 🐍 |
-| [🚀 Production Review](./10-agents-in-production/) | Pre-deploy review | 🐍 |
-| [📖 Case Studies](./case-studies/) | Anonymized real results | — |
+| Agent | What it does | Code? | Context? |
+|-------|-------------|-------|----------|
+| [💡 AI Agent Consultant](./01-what-is-ai-agent/) | Choose the right agent type | ❌ | ✅ |
+| [📋 Campaign Brief Agent](./02-your-first-campaign-agent/) | 5 inputs → complete brief | ❌ | ✅ |
+| [🔍 Campaign Synthesis](./03-tool-use-no-code/) | Synthesize multiple files | ❌ | ✅ |
+| [⚙️ Automation Scripter](./04-tool-use-python/) | Auto-generate Python scripts | 🐍 | ✅ |
+| [🔄 Multi-Agent Pipeline](./05-multi-agent-workflow/) | Research → Planning | 🐍 | ✅ |
+| [📚 Agentic RAG](./06-agentic-rag/) | Q&A from campaign history | ❌ | ✅ |
+| [🎯 Planning Agent](./07-planning-agent/) | Target → full campaign plan | 🐍 | ✅ |
+| [📊 A/B Test Analyzer](./08-ab-test-analyzer/) | Analyze + recommend | 🐍 | ✅ |
+| [📈 MEU Planning](./09-meu-planning-agent/) | MEU target → campaigns | 🐍 | ✅ |
+| [🚀 Production Review](./10-agents-in-production/) | Pre-deploy review | 🐍 | ✅ |
+| [💰 Voucher Mechanic Designer](#) | Voucher/cashback design | ❌ | ✅ |
+| [🏦 Fintech Campaign Designer](#) | SEA fintech campaign design | ❌ | ✅ |
+| [📉 Retention Analyzer](#) | Cohort retention diagnosis | ❌ | ✅ |
+| [🛑 Churn Intervention](#) | Save offers + winback | ❌ | ✅ |
+| [🔌 growth-mcp Connect](#) | **Data connector** → live data | 🐍 | 🟢 |
+| [📖 Case Studies](./case-studies/) | Anonymized real results | — | — |
+
+> ✅ = Auto-reads `.agents/product-marketing-context.md` for shared context
+> 🟢 = Connects to growth-mcp MCP server for real-time data
+
+### 🎯 What Makes This Different
+
+Unlike every other marketing agent repo (Corey Haines, LeoYeAI, AgentKits), this one:
+
+| Unique | Why it matters |
+|--------|---------------|
+| **Dual format** | Skills + executable Python agents — not just markdown |
+| **Fintech + SEA** | Real campaign context from Vietnam, Indonesia, Philippines |
+| **Data connector** | growth-mcp MCP server → live metrics, not guesswork |
+| **Context system** | Fill `.agents/product-marketing-context.md` once → 15 skills share it |
+| **Bilingual VI/EN** | Full Vietnamese + English prompts and skills |
+
+### 💡 Context System
+
+```
+.agents/
+├── product-marketing-context.md   ← Fill once → 15 skills auto-use it
+└── growth-metrics-context.md      ← Optional: manual metric overrides
+```
+
+Inspired by Corey Haines (31k⭐) but fintech-focused + with real Python agents.
+
+### 🔌 Data Connector: growth-mcp
+
+Connect [growth-mcp](https://github.com/thaolst/growth-mcp) for live campaign data:
+
+```bash
+git clone https://github.com/thaolst/growth-mcp.git
+cd growth-mcp && pip install -e .
+```
+
+When connected, skills automatically:
+- Pull campaign performance before writing briefs
+- Pull real cohort data before retention analysis
+- Pull experiment data before A/B test analysis
+- Compare recommendations against real campaign history
 
 ### Quick start
 

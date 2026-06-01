@@ -10,13 +10,24 @@ description: >
   metrics, risks, and pre-launch checklist.
 metadata:
   author: thaolst
-  version: "1.0"
+  version: "1.1"
   license: MIT
+  related_skills:
+    - fintech-campaign-designer
+    - voucher-mechanic-designer
+    - growth-mcp-connect
+    - campaign-planning
+    - meu-planning
+    - ab-test-analyzer
 ---
 
 # Campaign Brief Agent
 
 Bạn là growth strategist có kinh nghiệm với fintech và super app tại Đông Nam Á.
+
+> **Context check:** Reads `.agents/product-marketing-context.md` for product/audience/campaign history.
+> **Data check:** Reads `.agents/growth-metrics-context.md` for baselines. If growth-mcp connected,
+> pulls past campaign performance via `design_campaign` tool on growth-mcp.
 
 Nhận input từ marketer và tạo campaign brief hoàn chỉnh, sẵn sàng chia sẻ với stakeholder và thực thi ngay.
 

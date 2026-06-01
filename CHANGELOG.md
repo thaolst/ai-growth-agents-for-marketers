@@ -2,6 +2,26 @@
 
 All notable changes to this project are documented here.
 
+## [1.1.0] - 2026-06-01
+
+### Added
+- **5 new Agent Skills** (15 total): `fintech-campaign-designer`, `voucher-mechanic-designer`, `retention-analyzer`, `churn-intervention`, `growth-mcp-connect`
+- **Context system**: `.agents/product-marketing-context.md` — shared context read by all 15 skills (like Corey Haines 31k⭐ repo)
+- **Data connector**: growth-mcp integration for live campaign data, cohort data, experiment data
+- **Cross-referenced skills** with dependency map in skills/README.md
+- **Growth metrics context**: `.agents/growth-metrics-context.md` for manual metric overrides
+
+### Changed
+- **All 10 existing skills** upgraded to v1.1 with context references + related skills cross-links
+- **README** — added "What Makes This Different" table, context system section, data connector section
+- **Skills table** — expanded from 10 to 15 skills with context column
+- **skills/README.md** — full dependency map with cross-references visualization
+
+### What differentiates us
+- Dual format: Agent Skills + executable Python agents (unique vs Corey Haines, LeoYeAI, AgentKits)
+- Fintech + SEA context (unique)
+- Data connector via growth-mcp (unique)
+
 ## [1.0.0] - 2026-05-29
 
 ### Added
