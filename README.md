@@ -47,7 +47,7 @@ Hoạt động với Claude Code, OpenAI Codex, Cursor, và mọi agent hỗ tr�
 
 ## AI Growth Agents for Marketers
 
-Mình dùng AI agent trong công việc growth marketing hàng ngày — để viết brief, phân tích A/B test, lên campaign plan, đề xuất mechanic voucher. Repo này là những gì thực sự chạy được, không phải những gì trông hay trên slide.
+Mình dùng AI agent trong công việc growth marketing hàng ngày - để viết brief, phân tích A/B test, lên campaign plan, đề xuất mechanic voucher. Repo này là những gì thực sự chạy được, không phải những gì trông hay trên slide.
 
 ### Kết quả thực tế
 
@@ -79,16 +79,16 @@ Mình dùng AI agent trong công việc growth marketing hàng ngày — để v
 | [📊 A/B Test Analyzer](./08-ab-test-analyzer/) | Phân tích + đề xuất | 🐍 |
 | [📈 MEU Planning](./09-meu-planning-agent/) | MEU target → Campaign plan | 🐍 |
 | [🚀 Production Review](./10-agents-in-production/) | Review agent trước deploy | 🐍 |
-| [📖 Case Studies](./case-studies/) | Kết quả thực tế, ẩn danh | — |
+| [📖 Case Studies](./case-studies/) | Kết quả thực tế, ẩn danh | - |
 
 ### Bắt đầu
 
-**Không code — 1 phút:**
+**Không code - 1 phút:**
 ```bash
 # Mở Claude.ai → paste prompt từ bất kỳ folder 01, 02, 03, 06
 ```
 
-**Có Python — 2 phút:**
+**Có Python - 2 phút:**
 ```bash
 git clone https://github.com/thaolst/ai-growth-agents-for-marketers
 cd ai-growth-agents-for-marketers
@@ -96,7 +96,7 @@ make setup
 # Edit .env → dán API key → make run AGENT=08-ab-test-analyzer
 ```
 
-**One-click — 0 phút setup:**
+**One-click - 0 phút setup:**
 [![Open in Codespaces](https://img.shields.io/badge/Open%20in-Codespaces-181717?style=flat-square&logo=github)](https://codespaces.new/thaolst/ai-growth-agents-for-marketers)
 Môi trường Python + extensions sẵn, chỉ cần thêm API key.
 
@@ -115,7 +115,7 @@ Môi trường Python + extensions sẵn, chỉ cần thêm API key.
 
 | Không giống ai | Vì sao độc đáo |
 |----------------|----------------|
-| **Python agents chạy thật** | Skills markdown + 7 Python agents executable — dual format |
+| **Python agents chạy thật** | Skills markdown + 7 Python agents executable - dual format |
 | **Fintech + SEA context** | Không lý thuyết SaaS Mỹ. Campaign thật ở Việt Nam, Indonesia, Philippines |
 | **Data connector** | growth-mcp MCP server → real metrics, không guesswork |
 | **Context system** | Điền `.agents/product-marketing-context.md` một lần → 15 skills dùng chung |
@@ -143,11 +143,11 @@ npx skills add thaolst/ai-growth-agents-for-marketers/skills/campaign-brief
 | `ab-test-analyzer` | [08](./08-ab-test-analyzer/) | A/B test analysis | ✅ |
 | `meu-planning` | [09](./09-meu-planning-agent/) | MEU planning | ✅ |
 | `agent-pre-deploy-review` | [10](./10-agents-in-production/) | Pre-deploy review | ✅ |
-| `voucher-mechanic-designer` | — | Thiết kế mechanic voucher | ✅ |
-| `fintech-campaign-designer` | — | Campaign design cho fintech | ✅ |
-| `retention-analyzer` | — | Phân tích retention | ✅ |
-| `churn-intervention` | — | Save offer + winback | ✅ |
-| `growth-mcp-connect` | — | **Data connector** → real data | 🟢 |
+| `voucher-mechanic-designer` | - | Thiết kế mechanic voucher | ✅ |
+| `fintech-campaign-designer` | - | Campaign design cho fintech | ✅ |
+| `retention-analyzer` | - | Phân tích retention | ✅ |
+| `churn-intervention` | - | Save offer + winback | ✅ |
+| `growth-mcp-connect` | - | **Data connector** → real data | 🟢 |
 
 > ✅ = Skill tự động đọc `.agents/product-marketing-context.md`
 > 🟢 = Skill kết nối growth-mcp để lấy real-time data
@@ -194,22 +194,22 @@ OPENAI_API_KEY=sk-proj-...
 | Biến | Mặc định | Ghi chú |
 |------|----------|---------|
 | `AI_PROVIDER` | `anthropic` | `anthropic` hoặc `openai` |
-| `ANTHROPIC_API_KEY` | — | [console.anthropic.com](https://console.anthropic.com) |
-| `OPENAI_API_KEY` | — | Chỉ cần nếu dùng OpenAI |
+| `ANTHROPIC_API_KEY` | - | [console.anthropic.com](https://console.anthropic.com) |
+| `OPENAI_API_KEY` | - | Chỉ cần nếu dùng OpenAI |
 | `AI_MODEL` | (default) | Ghi đè model nếu muốn |
 
 ### Tham gia cộng đồng
 
-- [💬 Discussions](https://github.com/thaolst/ai-growth-agents-for-marketers/discussions) — hỏi đáp, chia sẻ kinh nghiệm
-- [🐛 Report bug](https://github.com/thaolst/ai-growth-agents-for-marketers/issues/new?template=bug_report.md) — prompt không hoạt động
-- [💡 Suggest agent](https://github.com/thaolst/ai-growth-agents-for-marketers/issues/new?template=feature_request.md) — đề xuất agent mới
-- [📝 Pull Request](./CONTRIBUTING.md) — đóng góp prompt/agent
+- [💬 Discussions](https://github.com/thaolst/ai-growth-agents-for-marketers/discussions) - hỏi đáp, chia sẻ kinh nghiệm
+- [🐛 Report bug](https://github.com/thaolst/ai-growth-agents-for-marketers/issues/new?template=bug_report.md) - prompt không hoạt động
+- [💡 Suggest agent](https://github.com/thaolst/ai-growth-agents-for-marketers/issues/new?template=feature_request.md) - đề xuất agent mới
+- [📝 Pull Request](./CONTRIBUTING.md) - đóng góp prompt/agent
 
 ### Tác giả
 
-**Lê Song Tiên Thảo** — Growth Marketer @ MoMo (fintech, SEA)
+**Lê Song Tiên Thảo** - Growth Marketer @ MoMo (fintech, SEA)
 
-Mình build agent, prompt, và workflow cho công việc growth thực tế — trong giới hạn thật của budget, channel, và segment behavior.
+Mình build agent, prompt, và workflow cho công việc growth thực tế - trong giới hạn thật của budget, channel, và segment behavior.
 
 [LinkedIn](https://www.linkedin.com/in/thaolst/) · [GitHub](https://github.com/thaolst) · [Substack](https://thaolst.substack.com/) · [Website](https://thaolst.github.io/ai-growth-agents-for-marketers)
 
@@ -219,7 +219,7 @@ Mình build agent, prompt, và workflow cho công việc growth thực tế — 
 
 ## AI Growth Agents for Marketers
 
-I use AI agents daily for growth marketing work — writing briefs, analyzing A/B tests, planning campaigns, recommending voucher mechanics. This repo is what actually runs, not what looks good on slides.
+I use AI agents daily for growth marketing work - writing briefs, analyzing A/B tests, planning campaigns, recommending voucher mechanics. This repo is what actually runs, not what looks good on slides.
 
 ### Real results
 
@@ -256,7 +256,7 @@ I use AI agents daily for growth marketing work — writing briefs, analyzing A/
 | [📉 Retention Analyzer](#) | Cohort retention diagnosis | ❌ | ✅ |
 | [🛑 Churn Intervention](#) | Save offers + winback | ❌ | ✅ |
 | [🔌 growth-mcp Connect](#) | **Data connector** → live data | 🐍 | 🟢 |
-| [📖 Case Studies](./case-studies/) | Anonymized real results | — | — |
+| [📖 Case Studies](./case-studies/) | Anonymized real results | - | - |
 
 > ✅ = Auto-reads `.agents/product-marketing-context.md` for shared context
 > 🟢 = Connects to growth-mcp MCP server for real-time data
@@ -267,7 +267,7 @@ Unlike every other marketing agent repo (Corey Haines, LeoYeAI, AgentKits), this
 
 | Unique | Why it matters |
 |--------|---------------|
-| **Dual format** | Skills + executable Python agents — not just markdown |
+| **Dual format** | Skills + executable Python agents - not just markdown |
 | **Fintech + SEA** | Real campaign context from Vietnam, Indonesia, Philippines |
 | **Data connector** | growth-mcp MCP server → live metrics, not guesswork |
 | **Context system** | Fill `.agents/product-marketing-context.md` once → 15 skills share it |
@@ -300,12 +300,12 @@ When connected, skills automatically:
 
 ### Quick start
 
-**No code — 1 minute:**
+**No code - 1 minute:**
 ```bash
 # Open Claude.ai → paste any prompt from folders 01, 02, 03, 06
 ```
 
-**Python — 2 minutes:**
+**Python - 2 minutes:**
 ```bash
 git clone https://github.com/thaolst/ai-growth-agents-for-marketers
 cd ai-growth-agents-for-marketers
@@ -313,7 +313,7 @@ make setup
 # Edit .env → paste API key → make run AGENT=08-ab-test-analyzer
 ```
 
-**One-click — 0 setup:**
+**One-click - 0 setup:**
 [![Open in Codespaces](https://img.shields.io/badge/Open%20in-Codespaces-181717?style=flat-square&logo=github)](https://codespaces.new/thaolst/ai-growth-agents-for-marketers)
 
 ### Provider support
@@ -322,16 +322,16 @@ All Python agents support both **Anthropic Claude** (default) and **OpenAI GPT**
 
 ### Join the community
 
-- [💬 Discussions](https://github.com/thaolst/ai-growth-agents-for-marketers/discussions) — Q&A, share experiences
-- [🐛 Report bug](https://github.com/thaolst/ai-growth-agents-for-marketers/issues/new?template=bug_report.md) — prompt not working
-- [💡 Suggest agent](https://github.com/thaolst/ai-growth-agents-for-marketers/issues/new?template=feature_request.md) — suggest a new agent
-- [📝 Pull Request](./CONTRIBUTING.md) — contribute prompts/agents
+- [💬 Discussions](https://github.com/thaolst/ai-growth-agents-for-marketers/discussions) - Q&A, share experiences
+- [🐛 Report bug](https://github.com/thaolst/ai-growth-agents-for-marketers/issues/new?template=bug_report.md) - prompt not working
+- [💡 Suggest agent](https://github.com/thaolst/ai-growth-agents-for-marketers/issues/new?template=feature_request.md) - suggest a new agent
+- [📝 Pull Request](./CONTRIBUTING.md) - contribute prompts/agents
 
 ### Author
 
-**Lê Song Tiên Thảo (Tara)** — Growth Marketing Manager @ MoMo (fintech, SEA)
+**Lê Song Tiên Thảo (Tara)** - Growth Marketing Manager @ MoMo (fintech, SEA)
 
-Building AI agents, prompts, and workflows for real growth work — within real constraints of budget, channel, and segment behavior.
+Building AI agents, prompts, and workflows for real growth work - within real constraints of budget, channel, and segment behavior.
 
 [LinkedIn](https://www.linkedin.com/in/thaolst/) · [GitHub](https://github.com/thaolst) · [Substack](https://thaolst.substack.com/) · [Website](https://thaolst.github.io/ai-growth-agents-for-marketers)
 
