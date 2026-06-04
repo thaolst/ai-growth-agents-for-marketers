@@ -1,8 +1,8 @@
 {
   "name": "ai-growth-agents-for-marketers",
-  "description": "AI prompts and workflows for growth marketers \u2014 built from real fintech campaigns in Southeast Asia",
+  "description": "AI prompts and workflows for growth marketers - built from real fintech campaigns in Southeast Asia",
   "author": "thaolst",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "license": "MIT",
   "homepage": "https://github.com/thaolst/ai-growth-agents-for-marketers",
   "skills": [
@@ -27,14 +27,29 @@
       "description": "Build monthly or quarterly campaign plan"
     },
     {
-      "name": "tool-use-no-code",
-      "path": "skills/tool-use-no-code",
+      "name": "ai-agent-consultant",
+      "path": "skills/ai-agent-consultant",
+      "description": "Choose the right agent type for a given growth task"
+    },
+    {
+      "name": "campaign-synthesis",
+      "path": "skills/campaign-synthesis",
       "description": "Synthesize multiple campaign files to extract insights"
+    },
+    {
+      "name": "automation-scripter",
+      "path": "skills/automation-scripter",
+      "description": "Generate Python scripts for marketing automation tasks"
+    },
+    {
+      "name": "multi-agent-research",
+      "path": "skills/multi-agent-research",
+      "description": "Run a two-stage research then planning workflow for growth campaigns"
     },
     {
       "name": "multi-agent-workflow",
       "path": "skills/multi-agent-workflow",
-      "description": "Two-stage research then planning workflow"
+      "description": "Orchestrate multiple agents across research and planning stages"
     },
     {
       "name": "agentic-rag",
@@ -42,9 +57,49 @@
       "description": "Query campaign history and past documents"
     },
     {
+      "name": "rag-knowledge-base",
+      "path": "skills/rag-knowledge-base",
+      "description": "Turn past campaign documents into a searchable knowledge base"
+    },
+    {
+      "name": "tool-use-no-code",
+      "path": "skills/tool-use-no-code",
+      "description": "Synthesize multiple campaign files and documents to extract insights"
+    },
+    {
+      "name": "agent-pre-deploy-review",
+      "path": "skills/agent-pre-deploy-review",
+      "description": "Review prompts before deploying to real usage"
+    },
+    {
       "name": "agents-in-production",
       "path": "skills/agents-in-production",
-      "description": "Review prompts before deploying to real usage"
+      "description": "Review an AI prompt or workflow before deploying it to real usage"
+    },
+    {
+      "name": "voucher-mechanic-designer",
+      "path": "skills/voucher-mechanic-designer",
+      "description": "Design and optimize voucher/cashback mechanics for growth campaigns"
+    },
+    {
+      "name": "fintech-campaign-designer",
+      "path": "skills/fintech-campaign-designer",
+      "description": "Design full fintech campaigns from concept to execution"
+    },
+    {
+      "name": "retention-analyzer",
+      "path": "skills/retention-analyzer",
+      "description": "Analyze cohort retention, diagnose drops, identify at-risk segments"
+    },
+    {
+      "name": "churn-intervention",
+      "path": "skills/churn-intervention",
+      "description": "Design churn prevention and winback campaigns for fintech and super apps"
+    },
+    {
+      "name": "growth-mcp-connect",
+      "path": "skills/growth-mcp-connect",
+      "description": "Connect to growth-mcp MCP server for real campaign data and metrics"
     }
   ]
 }
