@@ -1,6 +1,7 @@
 """
-Growth Engine — Agent trung tâm phát triển GitHub cho Thảo
+Personal Brand Engine — Agent xây dựng Personal Brand cho Marketer
 Định hướng Top 1 AI x Growth Marketing tại SEA
+Tự động: phát triển repo → sinh content → track hiệu quả
 Memory + Roadmap + GitHub API + Social + Priority Engine
 """
 import json, os, sys, re, random, subprocess

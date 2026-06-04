@@ -13,6 +13,20 @@
       "action": "add growth-engine",
       "topic": "Growth Engine v1 \u2014 GitHub API + SEA target + Memory + Roadmap",
       "status": "done"
+    },
+    {
+      "date": "2026-06-04T21:12:00.534452",
+      "repo": "agents",
+      "action": "add skills module",
+      "topic": "Skills: scan/develop/example/content (CowAgent pattern)",
+      "status": "done"
+    },
+    {
+      "date": "2026-06-04T21:12:00.534467",
+      "repo": "agents",
+      "action": "refactor growth-engine",
+      "topic": "Growth Engine v2 \u2014 skills module integration",
+      "status": "done"
     }
   ],
   "content_log": [],
