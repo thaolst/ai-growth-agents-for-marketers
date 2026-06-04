@@ -73,16 +73,16 @@ def _facebook_post(topic, link):
 
 
 # ==================== THREADS FORMAT ====================
-# Cấu trúc: 1-2 câu conversational + link
-# Tone: Tự nhiên, như đang reply trong group chat
-# Dài: 30-80 từ
+# Cấu trúc: 4-5 câu conversational + link
+# Tone: Tự nhiên, như đang nói chuyện, storytelling nhẹ
+# Dài: 4-5 câu (~200-300 ký tự)
 
 THREADS_CONTENT = [
-    lambda t, l: f"{t}. Đã code xong prompt + ví dụ output, public free trên GitHub. Ai cần thì dùng.\n\n{l}",
-    lambda t, l: f"Growth marketers: đừng tự làm {t} từ đầu nữa. Dùng prompt có sẵn.\n\n{l}",
-    lambda t, l: f"Mất bao lâu để {t}? Giờ chỉ mất 30 giây.\n\n{l}",
-    lambda t, l: f"Prompt template cho {t}. Free trên GitHub, clone về chạy luôn.\n\n{l}",
-    lambda t, l: f"{t}. Có template rồi, không cần nghĩ nhiều.\n\n{l}"
+    lambda t, l: f"{t} là việc mình từng mất cả buổi để làm. Cho đến khi mình code hết thành prompt template.\n\nGiờ chỉ cần copy, paste, đổi số liệu — chạy luôn. Tiết kiệm thời gian kinh khủng.\n\nRepo free trên GitHub, ai cần thì ghé.\n\n{l}",
+    lambda t, l: f"Mình thấy nhiều người làm growth vẫn đang tự làm {t} từ đầu mỗi lần. Tốn thời gian lắm.\n\nMình public luôn bộ prompt template đang dùng. Có ví dụ output cụ thể, copy paste vào campaign là chạy được ngay.\n\n{l}",
+    lambda t, l: f"Hồi mới làm growth, {t} là việc mình sợ nhất. Mất cả buổi, sai vài chỗ là làm lại.\n\nGiờ có template rồi. Nhập số liệu, AI chạ�y, mình chỉ review.\n\nAi cần thì lấy về dùng, free.\n\n{l}",
+    lambda t, l: f"3 tháng trước mình ngồi Excel tính tay {t}. 3 tháng sau code hết thành prompt.\n\nTiết kiệm 2 ngày làm việc mỗi tháng. Work smarter, not harder.\n\nRepo GitHub free cho ai cần.\n\n{l}",
+    lambda t, l: f"Bạn đã bao giờ mất cả buổi để {t}? Mình cũng từng vậy.\n\nCho đến khi mình viết prompt template cho việc này. Có scenario thật + output kỳ vọng. Copy paste chạy luôn.\n\nFree trên GitHub, ai làm growth thì thử.\n\n{l}"
 ]
 
 def _threads_post(topic, link):
