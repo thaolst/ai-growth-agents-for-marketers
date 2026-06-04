@@ -8,6 +8,10 @@ from datetime import datetime, timedelta
 from urllib.request import Request, urlopen
 from urllib.error import URLError
 
+# Skills module
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from skills import scan as skill_scan, develop as skill_develop, example as skill_example, content as skill_content
+
 # === CONFIG ===
 ROOT = os.path.dirname(os.path.abspath(__file__))
 CONFIG_PATH = os.path.join(ROOT, "growth-engine-config.json")
@@ -378,22 +382,32 @@ class GrowthEngine:
         return task
 
     def execute(self, task):
-        """Thực thi task sau khi duyệt — chạy script tương ứng"""
+        """Thực thi task sau khi duyệt — dùng skills module"""
         repo = task["repo"]
         topic = task.get("topic", task.get("task", ""))
         print(f"🚀 Executing: {repo} → {topic}")
 
-        # Tuỳ task type, chạy script phù hợp
-        if repo == "agents":
-            # Chạy repo-dev-agent để scan + suggest
-            import subprocess
-            result = subprocess.run(
-                ["python3", os.path.join(ROOT, "repo-dev-agent.py"), "scan"],
-                capture_output=True, text=True, timeout=30
-            )
-            print(result.stdout)
-        elif repo == "prompts":
-            print(f"📝 Cần phát triển prompts: {topic}")
+        repo_path = CFG["repos"].get(repo, "")
+        if not repo_path:
+            print("❌ Unknown repo")
+            return
+
+        # Dùng skills module để thực thi
+        if "scan" in topic.lower():
+            result = skill_scan.run(repo_path)
+            print(f"📊 Scanned: {result.get('total', 0)} folders")
+
+        elif "ví dụ" in topic.lower() or "example" in topic.lower() or "output" in topic.lower():
+            print("📝 Use example skill to add output samples")
+
+        elif "content" in topic.lower() or "social" in topic.lower():
+            post = skill_content.run(task, "")
+            for platform, text in post.items():
+                print(f"\n--- {platform.upper()} ---\n{text}\n")
+
+        else:
+            print(f"📝 Phát triển nội dung: {topic}")
+            print("Dùng: python3 skills/develop.py <topic> <folder>")
 
         self.mem.log_dev(repo, "develop", topic, "done")
         print("✅ Done — chờ Thảo duyệt trước push")
