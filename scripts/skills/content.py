@@ -60,12 +60,14 @@ def run(task, repo_link):
     facebook = random.choice(HOOKS_FACEBOOK)(topic)
     threads = random.choice(HOOKS_THREADS)(topic)
     
-    # Đảm bảo link xuất hiện trong bài
-    if link not in linkedin:
-        linkedin += f"\n\n{link}"
-    if link not in facebook:
-        facebook += f"\n\n{link}"
-    if link not in threads:
-        threads += f"\n\n{link}"
+    # Đảm bảo link xuất hiện trong bài (chỉ 1 lần)
+    for name, text in [("linkedin", linkedin), ("facebook", facebook), ("threads", threads)]:
+        if link not in text:
+            if name == "linkedin":
+                linkedin += f"\n\n{link}"
+            elif name == "facebook":
+                facebook += f"\n\n{link}"
+            else:
+                threads += f"\n\n{link}"
     
     return {"linkedin": linkedin, "facebook": facebook, "threads": threads}
