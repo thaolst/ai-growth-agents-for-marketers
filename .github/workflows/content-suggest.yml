@@ -2,9 +2,8 @@ name: Content Suggestion Daily
 
 on:
   schedule:
-    # 19:30 GMT+7 = 12:30 UTC (mùa hè) hoặc thử 12:30 UTC
-    - cron: '30 12 * * 1-6'  # T2-T7, 19:30 GMT+7
-  workflow_dispatch:  # cho phép chạy tay
+    - cron: '30 12 * * 1-6'  # 19:30 GMT+7, T2-T7
+  workflow_dispatch:
 
 jobs:
   suggest:
