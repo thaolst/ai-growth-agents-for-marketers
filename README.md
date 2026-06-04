@@ -115,6 +115,7 @@ Môi trường Python + extensions sẵn, chỉ cần thêm API key.
 
 | Không giống ai | Vì sao độc đáo |
 |----------------|----------------|
+| **MEU Planning agent** | Repo duy nhất có agent lập kế hoạch ngược từ MEU - phổ biến ở fintech SEA, không ai làm |
 | **Python agents chạy thật** | Skills markdown + 7 Python agents executable - dual format |
 | **Fintech + SEA context** | Không lý thuyết SaaS Mỹ. Campaign thật ở Việt Nam, Indonesia, Philippines |
 | **Data connector** | growth-mcp MCP server → real metrics, không guesswork |
@@ -230,12 +231,12 @@ I use AI agents daily for growth marketing work - writing briefs, analyzing A/B 
 | Weekly growth report | 4 hours | Automated |
 | Voucher recommendation | Gut feeling | 10 minutes |
 
-### Who is this for
+### Who uses this
 
-- Growth marketers automating repetitive workflows
-- Marketing managers needing quick briefs / plans / reports
-- Founders / solo marketers wearing multiple hats
-- Anyone working in fintech, e-commerce, or super apps in Southeast Asia
+- Growth marketers who write the same brief structure every week and want that part automated
+- Marketing managers running on tight timelines - brief, plan, report, repeat
+- Founders doing growth alone without a team
+- Anyone running campaigns in fintech, e-commerce, or super apps across SEA
 
 ### What's inside
 
@@ -267,6 +268,7 @@ Unlike every other marketing agent repo (Corey Haines, LeoYeAI, AgentKits), this
 
 | Unique | Why it matters |
 |--------|---------------|
+| **MEU Planning agent** | Only repo with MEU-backward campaign planning - common in SEA fintech, ignored everywhere else |
 | **Dual format** | Skills + executable Python agents - not just markdown |
 | **Fintech + SEA** | Real campaign context from Vietnam, Indonesia, Philippines |
 | **Data connector** | growth-mcp MCP server → live metrics, not guesswork |
