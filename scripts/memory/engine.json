@@ -27,6 +27,13 @@
       "action": "refactor growth-engine",
       "topic": "Growth Engine v2 \u2014 skills module integration",
       "status": "done"
+    },
+    {
+      "date": "2026-06-04T21:20:16.466898",
+      "repo": "prompts",
+      "action": "add example output",
+      "topic": "V\u00ed d\u1ee5 output 00-campaign-level + 06-retention-strategy",
+      "status": "done"
     }
   ],
   "content_log": [],
