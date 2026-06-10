@@ -199,6 +199,16 @@ OPENAI_API_KEY=sk-proj-...
 | `OPENAI_API_KEY` | - | Chỉ cần nếu dùng OpenAI |
 | `AI_MODEL` | (default) | Ghi đè model nếu muốn |
 
+### Hệ sinh thái repo
+
+Mình có 3 repo phục vụ 3 mục đích khác nhau:
+
+| Repo | Là gì | Dùng khi nào |
+|---|---|---|
+| [ai-growth-prompts](https://github.com/thaolst/ai-growth-prompts) | Thư viện prompt theo chủ đề, copy-paste được ngay | Cần prompt cho 1 task cụ thể: thiết kế voucher, phân tích segment, viết brief |
+| [ai-growth-agents-for-marketers](https://github.com/thaolst/ai-growth-agents-for-marketers) (repo này) | Workflow nhiều bước dạng prompt + script, có skill cài cho Claude Code | Muốn chạy quy trình end-to-end: lập kế hoạch MEU, phân tích A/B test |
+| [growth-mcp](https://github.com/thaolst/growth-mcp) | MCP server đóng gói logic growth thành tool | Muốn Claude/Cursor gọi tool trực tiếp thay vì paste prompt |
+
 ### Tham gia cộng đồng
 
 - [💬 Discussions](https://github.com/thaolst/ai-growth-agents-for-marketers/discussions) - hỏi đáp, chia sẻ kinh nghiệm
@@ -321,6 +331,16 @@ make setup
 ### Provider support
 
 All Python agents support both **Anthropic Claude** (default) and **OpenAI GPT**. Set `AI_PROVIDER=openai` in `.env` to switch, or override with `AI_MODEL`.
+
+### Repo ecosystem
+
+I maintain 3 repos serving different purposes:
+
+| Repo | What it is | When to use |
+|---|---|---|
+| [ai-growth-prompts](https://github.com/thaolst/ai-growth-prompts) | Topic-based prompt library, ready to copy-paste | You need a prompt for one specific task: voucher design, segment analysis, campaign brief |
+| [ai-growth-agents-for-marketers](https://github.com/thaolst/ai-growth-agents-for-marketers) (this repo) | Multi-step workflows as prompts + scripts, installable as Claude Code skills | You want an end-to-end process: MEU planning, A/B test analysis |
+| [growth-mcp](https://github.com/thaolst/growth-mcp) | MCP server packaging growth logic as callable tools | You want Claude/Cursor to call tools directly instead of pasting prompts |
 
 ### Join the community
 
