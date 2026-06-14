@@ -1,6 +1,7 @@
 <img src="./images/banner.svg" alt="AI Growth Agents for Marketers" width="100%"/>
 
 <p align="center">
+  <a href="https://github.com/thaolst/ai-growth-agents-for-marketers/releases"><img src="https://img.shields.io/github/v/release/thaolst/ai-growth-agents-for-marketers?label=version&color=4ade80&style=flat-square" alt="version" /></a>
   <a href="./LICENSE"><img src="https://img.shields.io/github/license/thaolst/ai-growth-agents-for-marketers?color=60a5fa&style=flat-square" alt="license" /></a>
   <img src="https://img.shields.io/github/last-commit/thaolst/ai-growth-agents-for-marketers?color=a78bfa&style=flat-square" alt="last commit" />
   <img src="https://img.shields.io/github/stars/thaolst/ai-growth-agents-for-marketers?style=flat-square&color=facc15&logo=github" alt="stars" />
