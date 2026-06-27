@@ -2,7 +2,7 @@
   "name": "ai-growth-agents-for-marketers",
   "description": "AI prompts and workflows for growth marketers - built from real fintech campaigns in Southeast Asia",
   "author": "thaolst",
-  "version": "1.2.0",
+  "version": "1.1.0",
   "license": "MIT",
   "homepage": "https://github.com/thaolst/ai-growth-agents-for-marketers",
   "skills": [
@@ -100,11 +100,6 @@
       "name": "growth-mcp-connect",
       "path": "skills/growth-mcp-connect",
       "description": "Connect to growth-mcp MCP server for real campaign data and metrics"
-    },
-    {
-      "name": "social-listening",
-      "path": "skills/social-listening",
-      "description": "Monitor social platforms for brand mentions, competitor activity, and growth trends"
     }
   ]
 }
