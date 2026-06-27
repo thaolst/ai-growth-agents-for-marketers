@@ -2,6 +2,16 @@
 
 All notable changes to this project are documented here.
 
+## [1.2.0] - 2026-06-27
+
+### Added
+- **New skill: social-listening** (#20) — Monitor social platforms for brand mentions, competitor activity, and growth trends
+- **SKILL-TEMPLATE.md** — reusable template to scaffold new skills faster
+
+### Changed
+- **Makefile** — added `make scaffold NAME=x DESC="y"` target for quick skill creation
+- **skills.json** — updated to v1.2.0 with new skill entry
+
 ## [1.1.0] - 2026-06-01
 
 ### Added

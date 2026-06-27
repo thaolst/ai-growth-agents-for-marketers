@@ -85,6 +85,39 @@ lint:
 	@which markdownlint 2>/dev/null 1>/dev/null || (echo "Install markdownlint: npm install -g markdownlint-cli"; exit 1)
 	markdownlint '**/*.md' --ignore node_modules
 
+# ── Scaffold a new skill ───────────────────────────────────────
+# Use: make scaffold NAME=social-listening DESC="description"
+
+scaffold:
+	@if [ -z "$(NAME)" ]; then \
+		echo "Usage: make scaffold NAME=skill-name DESC=\"description here\""; \
+		exit 1; \
+	fi
+	@if [ -d "skills/$(NAME)" ]; then \
+		echo "❌ skills/$(NAME) already exists"; \
+		exit 1; \
+	fi
+	mkdir -p skills/$(NAME)
+	cp skills/SKILL-TEMPLATE.md skills/$(NAME)/SKILL.md
+	# Replace placeholders
+	sed -i '' 's/REPLACE-WITH-SLUG/$(NAME)/g' skills/$(NAME)/SKILL.md
+	# Update skills.json
+	python3 -c "
+import json
+with open('skills/skills.json') as f:
+    data = json.load(f)
+data['skills'].append({
+    'name': '$(NAME)',
+    'path': 'skills/$(NAME)',
+    'description': '$(DESC)'
+})
+with open('skills/skills.json', 'w') as f:
+    json.dump(data, f, indent=2)
+" 2>/dev/null
+	@echo "✅ Scaffolded skills/$(NAME)/"
+	@echo "   Edit skills/$(NAME)/SKILL.md to fill in the content."
+	@echo "   Commit: git add skills/$(NAME)/ skills/skills.json && git commit -m \"add skill: $(NAME) — $(DESC)\""
+
 # ── Clean ──────────────────────────────────────────────────────
 
 clean:
