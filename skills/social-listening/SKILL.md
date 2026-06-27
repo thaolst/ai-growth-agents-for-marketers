@@ -1,10 +1,10 @@
 ---
 name: social-listening
 description: >
-  Monitor social platforms (LinkedIn, X, Reddit, Facebook) for brand mentions,
-  competitor activity, and growth marketing trends. Use when the user wants to
-  track brand sentiment, spot market trends, or research competitors on social
-  platforms. No API keys needed — structured research methodology.
+  Monitor social platforms for brand mentions, competitor activity, and growth
+  marketing trends. Use when the user wants to track brand sentiment, spot
+  market trends, or research competitors. Combines manual research workflows
+  with API-based automation where available.
 metadata:
   author: thaolst
   version: "1.0"
@@ -19,11 +19,35 @@ metadata:
 
 > Checks `.agents/product-marketing-context.md` for brand keywords.
 > Checks `.agents/growth-metrics-context.md` for baseline metrics.
-> No external API required — uses structured research methodology.
 
 ## One-Liner
 
 Track what people say about your brand, competitors, and industry on social platforms — use signal to inform campaign strategy.
+
+## How Social Listening Works
+
+Social listening requires API access from each platform for automation.
+Without APIs, you can still do **manual structured research** — systematic,
+documented searches instead of random scrolling.
+
+| Method | Needs | Best For |
+|--------|-------|----------|
+| **Manual research** | Browser + search | Quick checks, small teams getting started |
+| **API-based** | Platform API keys + app review | Ongoing monitoring, scale |
+| **Third-party tools** | Budget ($200–500/mo) | Cross-platform dashboards |
+
+This skill covers **manual research** (anyone can do it) and outlines
+what's needed to automate each platform.
+
+## Platform Access Guide
+
+| Platform | Manual Research | API Automation |
+|----------|----------------|----------------|
+| **LinkedIn** | Search by keyword, filter by date/post type | LinkedIn Marketing API (restricted, company page only) |
+| **X / Twitter** | Advanced search: `brand keyword -filter:replies` | X API Basic ($100/mo) or Pro ($200/mo) |
+| **Reddit** | Site search: `site:reddit.com/r/subreddit "keyword"` | Reddit API (free, OAuth, rate-limited) |
+| **Facebook** | Platform search + public group browsing | Graph API (requires app review + business verification) |
+| **Google News / Blog search** | Google Alerts (free) | Google News RSS API (limited) |
 
 ## When to Use This Skill
 
@@ -31,15 +55,6 @@ Track what people say about your brand, competitors, and industry on social plat
 - After a campaign — measure earned conversation volume
 - Weekly brand health check
 - Competitor intelligence — what are competitors launching?
-
-## Social Listening Framework
-
-| Platform | What to Monitor | Signal Type |
-|----------|----------------|-------------|
-| **LinkedIn** | Company page engagement, industry posts, competitor updates | Professional sentiment, B2B signals |
-| **X / Twitter** | Brand mentions, campaign hashtags, industry keywords | Real-time buzz, crisis detection |
-| **Reddit** | Subreddit discussions (e.g., r/growthmarketing) | Deep community sentiment, pain points |
-| **Facebook / Groups** | Brand page, industry groups, ad comments | Consumer sentiment, ad feedback |
 
 ## Analysis Matrix
 
@@ -50,6 +65,14 @@ Track what people say about your brand, competitors, and industry on social plat
 | 🔄 Competitor launch | Market positioning shift | Analyze differentiation, adjust messaging |
 | 💬 Recurring user question | Unmet need or feature gap | Create content, explore product opportunity |
 | 📈 Trend keyword rise | Emerging market topic | Ride the trend — content or campaign |
+
+## Manual Research Workflow
+
+1. **Identify platforms** — pick 2-3 where your audience is most active
+2. **Search systematically** — same keywords, same filters, same time weekly
+3. **Log signals** — save findings in a shared doc (not just in your head)
+4. **Classify by analysis matrix** — negative? positive? trend? question?
+5. **Decide action** — each signal → one action (pause, amplify, pivot, create)
 
 ## Monitoring Cadence
 
@@ -63,8 +86,10 @@ Track what people say about your brand, competitors, and industry on social plat
 
 - [ ] Identify 3-5 brand keywords to track
 - [ ] Identify top 2 competitors
+- [ ] Pick 2-3 platforms to monitor
+- [ ] Understand API requirements if automating
 - [ ] Set monitoring cadence (daily scan + weekly deep)
-- [ ] Log signals in shared doc (not just in head)
+- [ ] Log signals in shared doc
 - [ ] Connect signals to campaign decisions
 
 ## Related Skills
